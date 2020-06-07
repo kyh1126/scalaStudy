@@ -1,0 +1,15 @@
+// src/main/scala/progscala2/rounding/scalatest.scX
+// 스칼라테스트 예제. 단독 실행하지 마시오. 
+
+import org.scalatest.{ FunSpec, ShouldMatchers } 
+
+class NerdFinderSpec extends FunSpec with ShouldMatchers {
+
+  describe ("nerd finder") {
+    it ("identify nerds from a List") {
+      val actors = List("Rick Moranis", "James Dean", "Woody Allen")
+      val finder = new NerdFinder(actors)
+      finder.findNerds shouldEqual List("Rick Moranis", "Woody Allen")
+    }
+  }
+}

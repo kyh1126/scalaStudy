@@ -1,0 +1,12 @@
+// src/main/scala/progscala2/typelessdomore/method-broad-inference-return.scX
+// 에러: 컴파일할 수 없음. 메서드는 실제로 List[Ant]를 반환하는데, 이는 너무 '광범위'함
+// ERROR: Won't compile. Method actually returns List[Any], which is too "broad".
+
+def makeList(strings: String*) = {
+  if (strings.length == 0)
+    List(0)  // #1
+  else
+    strings.toList
+}
+
+val list: List[String] = makeList()  // 컴파일 오류
