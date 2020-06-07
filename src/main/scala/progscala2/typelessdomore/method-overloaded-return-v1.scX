@@ -1,0 +1,12 @@
+// src/main/scala/progscala2/typelessdomore/method-overloaded-return-v1.scX
+// 'StringUtil'의 첫번째 버전(컴파일 오류 발생)
+// 오류: 컴파일할 수 없음. 두번째 'joiner'에 String 반환 타입이 필요함
+// Error: Won't compile: needs a String return type on the second "joiner".
+
+object StringUtilV1 {
+  def joiner(strings: String*): String = strings.mkString("-")
+
+  def joiner(strings: List[String]) = joiner(strings :_*)   // 컴파일 오류
+}
+
+println( StringUtilV1.joiner(List("Programming", "Scala")) )

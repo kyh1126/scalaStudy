@@ -1,0 +1,64 @@
+// src/main/java/progscala2/bigdata/CascadingWordCount.javaX
+/*
+ * Adapted from "Cascading for the Impatient", Exercise 2:
+ *   http://docs.cascading.org/impatient/
+ * Copyright (c) 2007-2013 Concurrent, Inc. All Rights Reserved.
+ * See that project for additional copyright information.
+ */
+package impatient;
+
+import java.util.Properties;
+import cascading.flow.Flow;
+import cascading.flow.FlowDef;
+import cascading.flow.hadoop.HadoopFlowConnector;
+import cascading.operation.aggregator.Count;
+import cascading.operation.regex.RegexSplitGenerator;
+import cascading.pipe.Each;
+import cascading.pipe.Every;
+import cascading.pipe.GroupBy;
+import cascading.pipe.Pipe;
+import cascading.property.AppProps;
+import cascading.scheme.hadoop.TextDelimited;
+import cascading.tap.Tap;
+import cascading.tap.hadoop.Hfs;
+import cascading.tuple.Fields;
+
+public class CascadingWordCount {
+  public static void main( String[] args ) {
+    String input  = args[0];
+    String outpu = args[1];
+
+    Properties properties = new Properties();                        // <2>
+    AppProps.setApplicationJarClass( properties, Main.class );
+    HadoopFlowConnector flowConnector = new HadoopFlowConnector( properties );
+
+    // 원본(소스)과 대상(싱크) 수도꼭지를 만든다.
+    Tap docTap = new Hfs( new TextDelimited( true, "\t" ), input );  // <3>
+    Tap wcTap = new Hfs( new TextDelimited( true, "\t" ), output );
+
+    // '문서'의 각 줄을 토큰 스트림으로 분리하는 정규식을 지정한다.
+    Fields token = new Fields( "token" );                            // <4>
+    Fields text = new Fields( "text" );
+    RegexSplitGenerator splitter =
+        new RegexSplitGenerator( token, "[ \\[\\]\\(\\),.]" );
+    // '토큰'만을 반환한다.
+    Pipe docPipe =                                                   // <5>
+      new Each( "token", text, splitter, Fields.RESULTS );
+
+    // 단어 개수를 결정한다.
+    Pipe wcPipe = new Pipe( "wc", docPipe );                         // <6>
+    wcPipe = new GroupBy( wcPipe, token );
+    wcPipe = new Every( wcPipe, Fields.ALL, new Count(), Fields.ALL );
+
+    // 수도꼭지, 파이프 등을 흐름으로 연결한다.
+    FlowDef flowDef = FlowDef.flowDef()                              // <7>
+     .setName( "wc" )
+     .addSource( docPipe, docTap )
+     .addTailSink( wcPipe, wcTap );
+
+    // 흐름을 실행한다.
+    Flow wcFlow = flowConnector.connect( flowDef );                  // <8>
+    wcFlow.complete();
+  }
+}
+

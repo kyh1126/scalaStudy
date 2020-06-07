@@ -1,0 +1,22 @@
+// src/main/scala/progscala2/visibility/private-type-nested.scalaX
+// 컴파일할 수 없음
+
+package scopeA {
+  class PrivateClass1 {
+    class Nested {
+      private[PrivateClass1] val nestedField = 1
+    }
+
+    private[PrivateClass1] val nested = new Nested
+    val nestedNested = nested.nestedField
+  }
+
+  class PrivateClass2 extends PrivateClass1 {
+    val nField = new Nested().nestedField   // 오류
+  }
+
+  class PrivateClass3 {
+    val privateClass1 = new PrivateClass1
+    val privateNField = privateClass1.nested.nestedField // 오류
+  }
+}

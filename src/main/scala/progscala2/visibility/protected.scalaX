@@ -1,0 +1,41 @@
+// src/main/scala/progscala2/visibility/protected.scalaX
+// 컴파일할 수 없음
+
+package scopeA {
+  class ProtectedClass1(protected val protectedField1: Int) {
+    protected val protectedField2 = 1
+
+    def equalFields(other: ProtectedClass1) =
+      (protectedField1 == other.protectedField1) &&
+      (protectedField2 == other.protectedField2) &&
+      (nested == other.nested)
+
+    class Nested {
+      protected val nestedField = 1
+    }
+
+    protected val nested = new Nested
+  }
+
+  class ProtectedClass2 extends ProtectedClass1(1) {
+    val field1 = protectedField1
+    val field2 = protectedField2
+    val nField = new Nested().nestedField  // 오류
+  }
+
+  class ProtectedClass3 {
+    val protectedClass1 = new ProtectedClass1(1)
+    val protectedField1 = protectedClass1.protectedField1 // 오류
+    val protectedField2 = protectedClass1.protectedField2 // 오류
+    val protectedNField = protectedClass1.nested.nestedField // 오류
+  }
+
+  protected class ProtectedClass4
+
+  class ProtectedClass5 extends ProtectedClass4
+  protected class ProtectedClass6 extends ProtectedClass4
+}
+
+package scopeB {
+  class ProtectedClass4B extends scopeA.ProtectedClass4 // 오류
+}
