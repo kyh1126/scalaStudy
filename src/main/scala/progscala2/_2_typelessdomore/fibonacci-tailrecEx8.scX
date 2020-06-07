@@ -1,6 +1,7 @@
 // src/main/scala/progscala2/typelessdomore/fibonacci-tailrec.scX
 import scala.annotation.tailrec
 
+// tailrec 애노테이션: 꼬리 재귀를 제대로 작성했는지 컴파일러가 오류 발생시켜 알려준다.
 @tailrec
 def fibonacci(i: Int): Long = {
   if (i <= 1) 1L
@@ -8,3 +9,6 @@ def fibonacci(i: Int): Long = {
 }
 
 (0 to 5) foreach ( i => println(fibonacci(i)) )
+
+// test (sbt shell) >
+// import 후 @ 실행 시 오류 확인 가능.

@@ -13,7 +13,7 @@ package progscala2._1_introscala.shapes
 // case 클래스
 // 1. 클래스 선언 앞에 case 를 넣으면 각각의 생성자 매개변수가 자동으로 클래스 인스턴스의 읽기 전용 필드로 바뀐다. 인스턴스 초기화 후 각 필드를
 //    읽을 수 있지만 그 값을 바꿀 수는 없다.
-// 2. 컴파일러가 자동으로 toString, equals, hashCode 를 만들어준다.
+// 2. 컴파일러가 자동으로 toString, equals, hashCode, copy 를 만들어준다.
 //    == 를 REPL 질의하면 스칼라는 equals 메서드 호출. 이 부분은 == 가 참조만 비교하는 자바와 다르다.(자바는 논리적 비교를 위해 equals 명시적 호출)
 // 3. 컴파일러가 모든 케이스 클래스에 대해 각 클래스와 이름이 같은 싱글턴 객체인 동반 객체를 자동으로 만들어낸다. (object Point)
 
