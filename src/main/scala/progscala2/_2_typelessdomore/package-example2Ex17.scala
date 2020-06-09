@@ -1,4 +1,7 @@
 // src/main/scala/progscala2/typelessdomore/package-example2.scala
+
+// 스칼라는 패키지 영역을 선언하기 위해 블록 구조의 구문을 사용하도록 지원한다.
+
 package com {
   package example {
     package pkg1 {
