@@ -1,10 +1,9 @@
 // src/main/scala/progscala2/rounding/TryCatchArm.scala
-package progscala2.rounding
+package progscala2._3_rounding
 import scala.language.reflectiveCalls
 import scala.util.control.NonFatal
 
-// 딘 왐플러(2015/12/21): 반환된 타입 T인 객체를 처리한다는 사실을 
-// 더 분명히 보여주기 위해 구현을 좀 더 변경하고, 사용 예제도 바꿨다.
+// 딘 왐플러(2015/12/21): 반환된 타입 T인 객체를 처리한다는 사실을 더 분명히 보여주기 위해 구현을 좀 더 변경하고 사용 예제도 바꿨다.
 object manage {
   def apply[R <: { def close():Unit }, T](resource: => R)(f: R => T): T = {
     var res: Option[R] = None
