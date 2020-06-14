@@ -1,6 +1,9 @@
-// BEGIN SERVICE
 // src/main/scala/progscala2/rounding/traits.sc
 
+// 트레이트(trait): 메서드를 선언하면서 원하면 정의까지 할 수 있는 인터페이스. 트레이트에 인스턴스 필드를 선언하고 원한다면 정의까지 할 수 있다.
+//                (정적 필드만 가능한 자바 인터페이스와는 다르다) 또한, 원한다면 타입값을 정의할 수도 있다. 트레이트를 혼합하기 위해 with 키워드 사용.
+
+// BEGIN SERVICE
 class ServiceImportante(name: String) {
   def work(i: Int): Int = {
     println(s"ServiceImportante: Doing important work! $i")
@@ -36,5 +39,4 @@ val service2 = new ServiceImportante("dos") with StdoutLogging {
   }
 }
 (1 to 3) foreach (i => println(s"Result: ${service2.work(i)}"))
-
 // END MIXED

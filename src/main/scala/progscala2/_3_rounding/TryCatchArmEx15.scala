@@ -3,9 +3,15 @@ package progscala2._3_rounding
 import scala.language.reflectiveCalls
 import scala.util.control.NonFatal
 
+// <1> R은 관리할 자원의 타입. <: 는 R이 다른 어떤 것의 서브 클래스임을 의미. T는 자원을 가지고 작업을 수행하도록 넘겨지는 익명 함수에서 반환하는 타입.
+//     resource 는 이름에 의한 매개변수.(괄호 없이 호출할 수 있는 함수로 생각하자) 자원을 가지고 처리할 작업이 들어 있는 두 번째 인자 목록을 넘긴다.
+//     자원을 인자로 받고 T라는 타입의 결과를 반환하는 함수다.
+
+// resource 는 이름에 의한 호출 매개변수다.
+
 // 딘 왐플러(2015/12/21): 반환된 타입 T인 객체를 처리한다는 사실을 더 분명히 보여주기 위해 구현을 좀 더 변경하고 사용 예제도 바꿨다.
 object manage {
-  def apply[R <: { def close():Unit }, T](resource: => R)(f: R => T): T = {
+  def apply[R <: { def close():Unit }, T](resource: => R)(f: R => T): T = {   // <1>
     var res: Option[R] = None
     try {
       res = Some(resource)         // '자원'에 대한 유일한 참조 
