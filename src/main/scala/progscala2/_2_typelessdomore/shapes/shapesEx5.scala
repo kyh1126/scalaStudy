@@ -33,6 +33,7 @@ case class Rectangle(lowerLeft: Point, height: Double, width: Double)
 // var s = Circle(Point(1.0, 1.0), 3.14)
 // s.draw(Point(1.0, 2.0))(str => println(s"Actor: $str"))
 
+// Currying
 // 1. 블록 구조 구문을 사용할 수 있다.
 // s.draw(Point(1.0, 2.0)){str => println(s"Actor: $str")}
 // s.draw(){str => println(s"Actor: $str")}   // offset 기본값을 사용하더라도 첫 인자 목록의 괄호를 지정해줘야 한다.

@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 // src/main/scala/progscala2/typelessdomore/factorial.sc
 
 // 내포(nest)된 메서드 정의와 재귀

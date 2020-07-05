@@ -6,6 +6,7 @@
 
 // Value 타입과 메서드 사이에는 이름공간의 충돌이 없다. 컴파일러가 값과 메서드에 대해 별도의 이름공간을 유지한다.
 
+// enum 으로 wine OrderType 같이 case class 로 많이 표현했다.
 object Breed extends Enumeration {
   type Breed = Value                                      // Value 대신 Breed 를 참조할 수 있기 위한 alias.
   val doberman = Value("Doberman Pinscher")

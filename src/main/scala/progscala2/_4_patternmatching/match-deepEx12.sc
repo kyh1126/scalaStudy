@@ -1,5 +1,7 @@
 // src/main/scala/progscala2/patternmatching/match-deep.sc
 
+// 케이스 클래스에 일치시키기
+
 // 지나치게 간단한 주소 타입이다. 모든 필드가 문자열이어야 하는지는 의문이다.
 case class Address(street: String, city: String, country: String)
 case class Person(name: String, age: Int, address: Address)

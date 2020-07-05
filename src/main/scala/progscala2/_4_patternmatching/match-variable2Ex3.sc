@@ -1,5 +1,6 @@
 // src/main/scala/progscala2/patternmatching/match-variable2.sc
 
+// 3. i, d, s, unexpected 변수를 위치지정자(_)로 바꿨다. 모든 경우에 x를 사용할수도 있다.
 for {
   x <- Seq(1, 2, 2.7, "one", "two", 'four)
 } {

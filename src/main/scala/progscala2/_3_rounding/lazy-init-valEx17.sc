@@ -9,7 +9,9 @@
 // 따라서 지연값은 미리 계산한 값에는 없는 부가 비용이 든다. 가드를 사용하는 데 따른 비용이 초기화 비용에 비해 무시할 만하거나,
 // 값을 초기화할 때 상호 의존관계가 복잡해서 지연값으로 이를 구현하는 것이 가장 쉬운 경우에만 지연값을 사용해야 한다.
 object ExpensiveResource {
-  lazy val resource: Int = init()  
+  // lazy val == def 같다.
+  lazy val resource: Int = init()
+//  def resource: Int = init()
   def init(): Int = { 
     // do something expensive
     0

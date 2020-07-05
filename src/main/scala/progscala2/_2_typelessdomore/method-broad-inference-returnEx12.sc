@@ -7,7 +7,7 @@
 // 1. 함수가 호출하는 다른 함수로 인해 타입을 잘못 추론할 수도 있다.
 // 2. 프로젝트 규모가 커지고 여러 모듈이 서로 다른 시간에 빌드되는 경우.
 
-def makeList(strings: String*) = {
+def makeList(strings: String*) = {  // return type 을 써주는게 좋다.
   if (strings.length == 0)
     Nil  // #1
   else

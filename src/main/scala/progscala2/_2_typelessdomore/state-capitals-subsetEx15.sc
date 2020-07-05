@@ -1,5 +1,6 @@
 // src/main/scala/progscala2/typelessdomore/state-capitals-subset.sc
 
+// wine CouponDto null 이면 터져서 Option 으로 선언해주는게 좋다.
 // Option: 어떤 값이 존재하거나 존재하지 않는 경우의 추상 클래스.
 // 1. Some: 값이 있는 상황을 표현하는 구체적 서브클래스.
 // 2. None: 값이 없는 상황을 표현하는 구체적 서브클래스.

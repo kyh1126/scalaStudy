@@ -20,6 +20,7 @@ def doWork(index: Int) = {
   index
 }
 
+// Wine, inboxDetailService 참고
 (1 to 5) foreach { index =>
   val future = Future {   // Future.apply(Future 싱글턴 객체에 있는 팩토리 메서드) 호출.
     doWork(index)         // 익명 함수 전달. 인자가 없는 익명 함수 전달하기 위해 괄호 대신 중괄호 사용.

@@ -1,7 +1,7 @@
 // src/main/scala/progscala2/rounding/scoped-for.sc
 
 // for 내장에 for 식의 앞부분에서 값을 정의하고 뒷부분에서 그 값을 참조할 수 있다.
-
+// wine 의 getInboxDetail 마냥 for comprehension 자주 쓴다.
 val dogBreeds = List("Doberman", "Yorkshire Terrier", "Dachshund",
                      "Scottish Terrier", "Great Dane", "Portuguese Water Dog")
 for {

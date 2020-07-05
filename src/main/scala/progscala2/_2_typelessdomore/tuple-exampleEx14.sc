@@ -5,6 +5,8 @@
 //          1 -> "one"      : 화살표 연산자는 원소가 둘인 튜플에서만 쓸 수 있다.
 //          Tuple2(1, "one")
 
+// 진짜 유용하다. wine inboxdeetalservicev2
+
 val t = ("Hello", 1, 2.3)                                            // <1>
 println( "Print the whole tuple: " + t )   
 println( "Print the first item:  " + t._1 )                          // <2>

@@ -6,6 +6,6 @@ def hello(name: String) = s"""Welcome!
   Hello, $name!
   * (Gratuitous Star!!)
   |We're glad you're here.
-  |  Have some extra whitespace.""".stripMargin
+  |  Have some extra whitespace.""".stripMargin // wine 테스트에 쓰인 부분이 있다.
 
 hello("Programming Scala")
