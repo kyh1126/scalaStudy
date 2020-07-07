@@ -1,5 +1,7 @@
 // src/main/scala/progscala2/patternmatching/match-deep2.sc
 
+// 케이스 절의 변수 바인딩 더 보기
+
 case class Address(street: String, city: String, country: String)
 case class Person(name: String, age: Int, address: Address)
 
@@ -9,8 +11,8 @@ val charlie = Person("Charlie", 32, Address("3 Python Ct.", "Boston",  "USA"))
 
 for (person <- Seq(alice, bob, charlie)) {
   person match {
-    case p @ Person("Alice", 25, address) => println(s"Hi Alice! $p")
-    case p @ Person("Bob", 29, a @ Address(street, city, country)) => 
+    case p @ Person("Alice", 25, address) => println(s"Hi Alice! $p")   // p @ ... : 전체 Person 인스턴스를 p에 대입
+    case p @ Person("Bob", 29, a @ Address(street, city, country)) =>   // a @ ... : Address 객체를 a 에 대입.
       println(s"Hi ${p.name}! age ${p.age}, in ${a.city}")
     case p @ Person(name, age, _) => 
       println(s"Who are you, $age year-old person named $name? $p")
