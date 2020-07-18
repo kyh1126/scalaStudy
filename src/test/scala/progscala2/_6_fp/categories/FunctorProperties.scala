@@ -1,5 +1,5 @@
 // src/test/scala/progscala2/fp/categories/FunctorProperties.scala
-package progscala2.fp.categories
+package progscala2._6_fp.categories
 import org.scalatest.FunSpec
 import org.scalatest.prop.PropertyChecks
 

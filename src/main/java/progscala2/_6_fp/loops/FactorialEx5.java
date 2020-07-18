@@ -1,7 +1,7 @@
-// src/main/java/progscala2/fp/loops/Factorial.java
-package progscala2.fp.loops;
+// src/main/java/progscala2/fp/loops/FactorialEx5.java
+package progscala2._6_fp.loops;
 
-public class Factorial {
+public class FactorialEx5 {
   public static long factorial(long l) {
     long result = 1L;
     for (long j = 2L; j <= l; j++) {

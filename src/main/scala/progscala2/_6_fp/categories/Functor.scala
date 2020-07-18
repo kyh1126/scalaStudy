@@ -1,5 +1,5 @@
 // src/main/scala/progscala2/fp/categories/Functor.scala
-package progscala2.fp.categories
+package progscala2._6_fp.categories
 import scala.language.higherKinds
 
 trait Functor[F[_]] {                                                // <1>

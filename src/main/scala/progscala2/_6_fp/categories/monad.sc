@@ -1,5 +1,5 @@
 // src/main/scala/progscala2/fp/categories/Monad.sc
-import progscala2.fp.categories._
+import progscala2._6_fp.categories._
 import scala.language.higherKinds
 
 val seqf: Int => Seq[Int] = i => 1 to i

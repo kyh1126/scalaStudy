@@ -1,5 +1,5 @@
 // src/main/scala/progscala2/fp/categories/Functor.sc
-import progscala2.fp.categories._
+import progscala2._6_fp.categories._
 import scala.language.higherKinds
 
 val fii: Int => Int       = i => i * 2
