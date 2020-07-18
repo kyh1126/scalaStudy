@@ -4,6 +4,7 @@
 
 package progscala.implicits.payroll
 
+// 표식 역할만 수행
 sealed trait PreTaxDeductions
 sealed trait PostTaxDeductions
 sealed trait Final

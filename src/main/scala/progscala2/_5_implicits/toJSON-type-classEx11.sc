@@ -1,5 +1,9 @@
 // src/main/scala/progscala2/implicits/toJSON-type-class.sc
 
+// 스칼라에서는 implicit 과 case 키워드를 동시에 사용할 수 없다. 즉, 추상 클래스가 동시에 케이스 클래스가 될 수 없다.
+
+// 타입 클래스: 임의 다형성.(toJSON 다형적 동작이 타입 시스템과 연동되어 있지 않다)
+
 case class Address(street: String, city: String)
 case class Person(name: String, address: Address)
 
@@ -11,6 +15,7 @@ trait ToJSON {
     (INDENTATION * level, INDENTATION * (level+1))
 }
 
+// 확장 메서드들
 implicit class AddressToJSON(address: Address) extends ToJSON {
   def toJSON(level: Int = 0): String = {
     val (outdent, indent) = indentation(level)

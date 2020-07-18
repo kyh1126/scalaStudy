@@ -1,11 +1,14 @@
 // src/main/scala/progscala2/implicits/scala-database-api.scala
 
+// implicit SRow 에 jrow 인스턴스를 참조할 수 있는 것은 클래스 본문의 범위 안에 들어있기 때문이다.
+
 // 자바와 비슷한 데이터베이스 API에 대한 스칼라 레퍼
-package progscala2.implicits {
+package progscala2._5_implicits {
     package scaladb {
     object implicits {
       import javadb.JRow
-      
+
+      // 암시적 객체를 사용해서 공통 슈퍼타입이 없는 경우에도 허용하는 타입을 제한할 수 있다. API 의 작동을 돕기위해 사용할 수 있다.
       implicit class SRow(jrow: JRow) {
         def get[T](colName: String)(implicit toT: (JRow,String) => T): T =
           toT(jrow, colName)

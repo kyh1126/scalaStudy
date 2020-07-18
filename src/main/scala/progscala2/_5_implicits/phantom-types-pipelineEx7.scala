@@ -11,6 +11,8 @@ object Pipeline {
   }
 }
 
+// 파이프라인 연산자를 활용해서 우아하게 수정하였다.
+// |> : 파이프라인 연산자. 여러 단계를 조합.(토큰 재배열)
 object CalculatePayroll2 {
   def main(args: Array[String]) = {
     import Pipeline._
