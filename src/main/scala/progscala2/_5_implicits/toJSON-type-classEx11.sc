@@ -4,6 +4,8 @@
 
 // 타입 클래스: 임의 다형성.(toJSON 다형적 동작이 타입 시스템과 연동되어 있지 않다)
 
+// cats: Future 연산자 같은걸 쉽게 해줄수 있는 joda.time 같은 라이브러리. 우리팀에서 많이 쓰고있다.
+
 case class Address(street: String, city: String)
 case class Person(name: String, address: Address)
 

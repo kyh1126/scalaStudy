@@ -32,6 +32,9 @@ import com.sun.rowset.internal.Row
 // 2. implicit 키워드는 인자 목록의 맨 처음에 와야 하며, 오직 한 번만 나타날 수 있다. 인자 목록 안에서 암시적 인자 다음에 비암시적 인자가 따라올 수 없다.
 // 3. 인자 목록이 implicit 키워드로 시작하면, 그 인자 목록 안의 모든 인자가 암시적 인자가 된다.
 
+// implicit method:  wine convertToChatRoom 같은 경우. convert 할 때 글로벌로 하기보단 클래스(scope) 안에서 쓴다.
+// implicit class: 문법 추가.
+
 // That: 만들고자 하는 대상 컬렉션의 타입 매개변수. 타입 매개변수는 다를지라도, 입력과 같은 종류의 컬렉션을 만들고 싶을 때 사용.
 
 // 자바와 비슷한 데이터베이스 API. 편의상 스칼라로 만듦.
@@ -51,7 +54,8 @@ package progscala2._5_implicits {
   package javadb {
     import database_api._
 
-    case class JRow(representation: Map[String,Any]) extends Row {
+    case class JRow(representation: Map[String,Any]) // extends Row // FactorialEx5 실행 안되서 주석 처리
+    {
       private def get(colName: String): Any =
         representation.getOrElse(colName, throw InvalidColumnName(colName))
 
