@@ -1,5 +1,7 @@
 // src/main/scala/progscala2/fp/combinators/combinators.sc
 
+// 두 객체가 인자 위치를 바꿨을 때 필요한 것들
+
 object Combinators1 {
   def map[A,B](list: List[A])(f: (A) ⇒ B): List[B] = list map f
 }

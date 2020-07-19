@@ -1,5 +1,7 @@
 // src/main/scala/progscala2/fp/datastructs/fold-assoc-funcs.sc
 
+// Left: 왼쪽에서 오른쪽으로 계산 진행.
+
 // fac: a func. that is associative and commutative.
 // Define left and right versions, because reduceLeft takes the accumulator
 // as the first argument, while reduceRight takes it as the second arg.
