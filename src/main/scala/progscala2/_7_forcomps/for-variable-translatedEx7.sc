@@ -8,7 +8,7 @@ val list1 = for {
 } yield (i10)
 // 결과: list1: scala.collection.immutable.Iterable[Int] = List(11, 12)
 
-// 변환:
+// 변환 ver:
 val list2 = for {
   (i, i10) <- for {
     x1 @ (key, value) <- map

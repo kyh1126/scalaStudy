@@ -2,9 +2,7 @@
 
 val states = List("Alabama", "Alaska", "Virginia", "Wyoming")
 
-for {
-  s <- states
-} yield s.toUpperCase
+for {s <- states} yield s.toUpperCase
 // 결과: List(ALABAMA, ALASKA, VIRGINIA, WYOMING)
 
 states map (_.toUpperCase)

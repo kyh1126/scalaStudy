@@ -2,9 +2,7 @@
 
 val states = List("Alabama", "Alaska", "Virginia", "Wyoming")
 
-for {
-  s <- states
-} println(s)
+for {s <- states} println(s)
 // 결과: 
 // Alabama
 // Alaska

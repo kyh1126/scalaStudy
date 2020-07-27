@@ -6,7 +6,7 @@ for {
   s <- states
   c <- s
   if c.isLower
-} yield s"$c-${c.toUpper} "
+} yield s"$c-${c.toUpper}"
 // 결과: List("l-L", "a-A", "b-B", ...)
 
 states flatMap (_.toSeq withFilter (_.isLower) map (c => s"$c-${c.toUpper}"))
