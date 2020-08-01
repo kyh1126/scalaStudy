@@ -1,5 +1,5 @@
 // src/main/scala/progscala2/basicoop/Zipcode.sc
-import progscala2.basicoop.ZipCode
+import progscala2._8_basicoop.ZipCode
 
 ZipCode(12345)
 // 결과: ZipCode = 12345

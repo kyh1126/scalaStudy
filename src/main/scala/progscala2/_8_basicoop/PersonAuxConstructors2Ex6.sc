@@ -1,5 +1,7 @@
 // src/main/scala/progscala2/basicoop/PersonAuxConstructors2.sc
-import progscala2.basicoop.Address
+import progscala2._8_basicoop.Address
+
+// 문제점: 사용자가 new 를 사용해서 인스턴스를 만든다.
 
 val a1 = new Address("1 Scala Lane", "Anytown", "CA", "98765")
 val a2 = new Address("98765")

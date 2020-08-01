@@ -1,19 +1,19 @@
 // src/main/scala/progscala2/basicoop/EmployeeSubclass.sc
-import progscala2.basicoop.Address
+import progscala2._8_basicoop.Address
 
 case class Person(    // 예전에는 Person2였으나 이름을 바꿨다.
   name: String,
   age: Option[Int] = None,
   address: Option[Address] = None)
 
-class Employee(                                                      // <1>
+class Employee(                          // <1>
   name: String,
   age: Option[Int] = None,
   address: Option[Address] = None,
-  val title: String = "[unknown]",                                   // <2>
+  val title: String = "[unknown]",       // <2> Employee 가 case 클래스가 아니기 때문에 val 키워드를 넣어야 한다.
   val manager: Option[Employee] = None) extends Person(name, age, address) {
 
-  override def toString =                                            // <3>
+  override def toString =                // <3> toString 오버라이딩. 오버라이딩하지 않으면 Person.toString 사용됨.
     s"Employee($name, $age, $address, $title, $manager)"
 }
 

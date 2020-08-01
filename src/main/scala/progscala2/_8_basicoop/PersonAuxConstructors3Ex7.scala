@@ -1,6 +1,8 @@
 // src/main/scala/progscala2/basicoop/PersonAuxConstructors3.scala
 package progscala2.basicoop3
-import progscala2.basicoop.Address
+import progscala2._8_basicoop.Address
+
+// 동반 객체에 있는 Person.apply 를 오버로딩하면 우리 자신만의 생성자를 만들 수 있고 new 사용을 피할 수 있다.
 
 case class Person3(
   name: String,

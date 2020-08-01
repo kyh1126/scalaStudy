@@ -1,5 +1,5 @@
 // src/main/java/progscala2/basicoop/JPerson.java
-package progscala2.basicoop;
+package progscala2._8_basicoop;
 
 public class JPerson {
   private String name;

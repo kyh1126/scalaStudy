@@ -1,5 +1,7 @@
 // src/main/scala/progscala2/basicoop/PersonAuxConstructors.sc
-import progscala2.basicoop.{Address, Person}
+import progscala2._8_basicoop.{Address, Person}
+
+// 문제점: Person 은 보조 생성자로 인해 불필요한 준비 코드가 많이 생겼다.
 
 val a1 = new Address("1 Scala Lane", "Anytown", "CA", "98765")
 // 결과: Address(1 Scala Lane,Anytown,CA,98765)

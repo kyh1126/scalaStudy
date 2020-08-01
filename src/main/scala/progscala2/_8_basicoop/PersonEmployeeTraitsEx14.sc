@@ -1,5 +1,5 @@
 // src/main/scala/progscala2/basicoop/PersonEmployeeTraits.sc
-import progscala2.basicoop.{ Address, Person, Employee }
+import progscala2._8_basicoop.{ Address, Person, Employee }
 
 val ceoAddress  = Address("1 Scala Lane", "Anytown", "CA", "98765")
 // 결과: ceoAddress: oop2.Address = Address(1 Scala Lane,Anytown,CA,98765)
