@@ -1,8 +1,8 @@
 // src/main/scala/progscala2/objectsystem/ui/Button.scala
 package progscala2.objectsystem.ui
-import progscala2.traits.ui2.Clickable
+import progscala2._9_traits.ui2.ClickableEx8
 
-class Button(val label: String) extends Widget with Clickable {
+class Button(val label: String) extends Widget with ClickableEx8 {
 
   // 보여주기 위해 간단하게 구현
   def draw(): Unit = println(s"Drawing: $this")

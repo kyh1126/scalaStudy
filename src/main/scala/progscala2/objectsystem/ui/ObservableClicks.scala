@@ -1,9 +1,9 @@
 // src/main/scala/progscala2/objectsystem/ui/ObservableClicks.scala
 package progscala2.objectsystem.ui
-import progscala2.traits.ui2.Clickable
-import progscala2.traits.observer.Subject
+import progscala2._9_traits.ui2.ClickableEx8
+import progscala2._9_traits.observer.Subject
 
-trait ObservableClicks extends Clickable with Subject[Clickable] {
+trait ObservableClicks extends ClickableEx8 with Subject[ClickableEx8] {
     abstract override def click(): Unit = {
         super.click()
         notifyObservers(this)

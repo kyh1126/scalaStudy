@@ -1,6 +1,6 @@
 // src/main/scala/progscala2/objectsystem/ui/RadioButton.scala
 package progscala2.objectsystem.ui
-import progscala2.traits.ui._
+import progscala2._9_traits.ui._
 
 /**
  * Button with two states, on or off, like an old-style,

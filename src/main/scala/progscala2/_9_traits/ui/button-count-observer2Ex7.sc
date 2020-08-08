@@ -1,8 +1,8 @@
 // src/main/scala/progscala2/traits/ui/button-count-observer2.sc
-import progscala2.traits.ui._
-import progscala2.traits.observer._
+import progscala2._9_traits.ui._
+import progscala2._9_traits.observer._
 
-val button = new Button("Click Me!") with Subject[Button] {
+val button = new ButtonEx4("Click Me!") with Subject[ButtonEx4] {
 
   override def click(): Unit = {
     super.click()
@@ -10,9 +10,9 @@ val button = new Button("Click Me!") with Subject[Button] {
   }
 }
 
-class ButtonCountObserver extends Observer[Button] {
+class ButtonCountObserver extends Observer[ButtonEx4] {
   var count = 0
-  def receiveUpdate(state: Button): Unit = count += 1
+  def receiveUpdate(state: ButtonEx4): Unit = count += 1
 }
 
 val bco1   = new ButtonCountObserver

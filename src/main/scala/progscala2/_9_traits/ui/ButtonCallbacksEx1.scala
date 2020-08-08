@@ -1,5 +1,5 @@
 // src/main/scala/progscala2/traits/ui/ButtonCallbacks.scala
-package progscala2.traits.ui
+package progscala2._9_traits.ui
 
 class ButtonWithCallbacks(val label: String,
     val callbacks: List[() => Unit] = Nil) extends Widget {

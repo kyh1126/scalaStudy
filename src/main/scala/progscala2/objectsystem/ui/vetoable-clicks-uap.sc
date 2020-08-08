@@ -1,9 +1,9 @@
 // src/main/scala/progscala2/objectsystem/ui/vetoable-clicks-uap.sc
 import progscala2.objectsystem.ui.Button
-import progscala2.traits.ui2.{Clickable, ObservableClicks, VetoableClicks}
-import progscala2.traits.observer._
+import progscala2._9_traits.ui2.{ClickableEx8, ObservableClicksEx10, VetoableClicksEx12}
+import progscala2._9_traits.observer._
 
-trait VetoableClicksUAP extends Clickable {
+trait VetoableClicksUAP extends ClickableEx8 {
 
   def maxAllowed: Int = 1                        // <1>
 
@@ -18,16 +18,16 @@ trait VetoableClicksUAP extends Clickable {
 }
 
 val observableButton =
-  new Button("Okay") with ObservableClicks with VetoableClicksUAP {
+  new Button("Okay") with ObservableClicksEx10 with VetoableClicksUAP {
     override val maxAllowed: Int = 2             // <2>
   }
 
 assert(observableButton.maxAllowed == 2,
   s"maxAllowed = ${observableButton.maxAllowed}")
 
-class ClickCountObserver extends Observer[Clickable] {
+class ClickCountObserver extends Observer[ClickableEx8] {
   var count = 0
-  def receiveUpdate(state: Clickable): Unit = count += 1
+  def receiveUpdate(state: ClickableEx8): Unit = count += 1
 }
 
 val clickCountObserver = new ClickCountObserver

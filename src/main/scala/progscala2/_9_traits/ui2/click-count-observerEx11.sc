@@ -1,13 +1,13 @@
 // src/main/scala/progscala2/traits/ui2/click-count-observer.sc
-import progscala2.traits.ui2._
-import progscala2.traits.observer._
+import progscala2._9_traits.ui2._
+import progscala2._9_traits.observer._
 
 // Button 내에서 'click'을 오버라이딩할 필요는 없다.
-val button = new Button("Click Me!") with ObservableClicks
+val button = new ButtonEx9("Click Me!") with ObservableClicksEx10
 
-class ClickCountObserver extends Observer[Clickable] {
+class ClickCountObserver extends Observer[ClickableEx8] {
   var count = 0
-  def receiveUpdate(state: Clickable): Unit = count += 1
+  def receiveUpdate(state: ClickableEx8): Unit = count += 1
 }
 
 val bco1 = new ClickCountObserver

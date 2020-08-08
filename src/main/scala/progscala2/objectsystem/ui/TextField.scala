@@ -1,8 +1,8 @@
 // src/main/scala/progscala2/objectsystem/ui/TextField.scala
 package progscala2.objectsystem.ui
-import progscala2.traits.ui2.Clickable
+import progscala2._9_traits.ui2.ClickableEx8
 
-class TextField(var text: String) extends Widget with Clickable {
+class TextField(var text: String) extends Widget with ClickableEx8 {
 
     def updateUI() = { /* Logic to update appearance of the text field. */ }
 
